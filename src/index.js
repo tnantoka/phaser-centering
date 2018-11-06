@@ -43,3 +43,24 @@ function create() {
 
   emitter.startFollow(logo);
 }
+
+function onResize() {
+  const { innerWidth, innerHeight } = window;
+
+  const canvas = document.querySelector('canvas');
+  const canvasWidth = parseInt(canvas.style.width);
+  const canvasHeight = parseInt(canvas.style.height);
+  console.log({ canvasWidth, canvasHeight})
+
+  const widthRatio = innerWidth / canvasWidth;
+  const heightRatio = innerHeight / canvasHeight;
+  const minRatio = Math.min(widthRatio, heightRatio);
+  canvas.style.width = canvasWidth * minRatio + 'px';
+  canvas.style.height = canvasHeight * minRatio + 'px';
+}
+
+window.addEventListener('load', () => {
+  onResize()
+});
+
+window.addEventListener('resize', onResize);
