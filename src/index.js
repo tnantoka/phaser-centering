@@ -50,7 +50,6 @@ function onResize() {
   const canvas = document.querySelector('canvas');
   const canvasWidth = parseInt(canvas.style.width);
   const canvasHeight = parseInt(canvas.style.height);
-  console.log({ canvasWidth, canvasHeight})
 
   const widthRatio = innerWidth / canvasWidth;
   const heightRatio = innerHeight / canvasHeight;
